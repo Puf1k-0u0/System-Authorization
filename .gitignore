@@ -1,0 +1,5 @@
+.idea/*
+.venv/*
+__pycache__/*
+authorization/__pycache__/*
+postgre-cred
