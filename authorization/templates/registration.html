@@ -6,7 +6,38 @@
 </head>
 <body>
     <h1>Registration</h1>
-    <a href="{{ url_for('hello_world') }}">Home</a>
-    <a href="{{ url_for('auth') }}">Authorization</a>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ messages }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Password2</td>
+                <td><input type="password" name="password2"></td>
+            </tr>
+            <tr>
+                <td><a href="{{ url_for('authorization') }}">Authorization</a></td>
+                <td><input type="submit" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+
+    <a href="{{ url_for('main') }}">Main</a>
 </body>
 </html>
