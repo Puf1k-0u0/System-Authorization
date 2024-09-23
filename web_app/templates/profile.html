@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Hello, {{ username }}!</h1>
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <a href="{{ url_for('main') }}">Main</a>
+    <a href="{{ url_for('quit') }}">Quit</a>
+</body>
+</html>
